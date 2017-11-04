@@ -110,10 +110,14 @@
     % separate the drawing based on if we're the first (title) slide or not
     \ifnum\thepage=1\relax
     % the title page
+    % draw the NASA logo
+    \node[anchor=south,inner sep=0cm] (nasa) at (0.8cm,6.5cm) {\includegraphics[width=0.07\textwidth]{images/nasa.png}};
+    \node[anchor=south] at (3.0cm,6.7cm) {\color{JplWhite}\scriptsize\textbf{Jet Propulsion Laboratory}};
+    \node[anchor=south] at (3.0cm,6.4cm) {\color{JplWhite}\tiny{California Institute of Technology}};
     % draw the actual text
     \node[anchor=south,text width=11.8cm,inner xsep=0.5cm] at (6.4cm,4.5cm) {\color{JplWhite}\LARGE\textbf{\inserttitle}};
     \node[anchor=north east,text width=11.8cm,align=right] at (12.3cm,4.5cm) {\color{JplGrey}\tiny\insertsubtitle};
-    \node at (6.4cm,2cm) {\color{JplWhite}\Large\insertauthor};
+    \node at (6.4cm,2cm) {\color{JplWhite}\large\insertauthor};
     % add the date in the corner
     \node[anchor=south east] at(12.8cm,0cm) {\color{JplGrey}\tiny\insertdate};
     \else
